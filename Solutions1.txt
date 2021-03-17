@@ -1,0 +1,15 @@
+  // SOLUTION Task 1
+  add to PersonClass
+//  public String toString() {
+//    return "PersonClass{"
+//        + "firstName='"
+//        + firstName
+//        + '\''
+//        + ", lastName='"
+//        + lastName
+//        + '\''
+//        + '}';
+//  }
+
+We forgot to add toString() to our PersonClass.
+The record added it automatically, together with equals() and hashCode()

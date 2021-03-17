@@ -1,0 +1,8 @@
+    // SOLUTION 3
+    As we can see, the PersonRecord was read back without an issue, but the PersonClass failed.
+    Can we make it work without re-running PersonWriteTest?
+    Indeed we can, by adding the following line to the PersonClass:
+
+    take serial from output:
+
+    private final static long serialVersionUID = 1748655727194441979L;

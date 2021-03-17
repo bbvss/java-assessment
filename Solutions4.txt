@@ -1,0 +1,31 @@
+// Potential SOLUTION 4 a
+Change PersonClass
+
+  public PersonClass(String firstName, String lastName) {
+    // Solution 4
+    if ("Heinz".equals(firstName))
+      throw new IllegalArgumentException(
+              "\"%s\" is trademarked".formatted(firstName));
+    //
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  When we run our PersonReadTest, we see that the constructor of PersonClass is not called,
+  thus we are still creating persons with names that might land us in hot water:
+  Let's also change PersonRecord:
+
+// SOLUTION 4 b
+  public PersonRecord{
+      if ("Heinz".equals(firstName))
+          throw new IllegalArgumentException(
+                  "\"%s\" is trademarked".formatted(firstName));
+  }
+  //
+
+   Stunning. The canonical constructor is called when we read records from an ObjectInputStream.
+   This means any checking code is also called.
+
+  You might be wondering why we were able to read the record earlier, even after changing the structure of the class.
+  The explanation is simple. Records by default always have a serialVersionUID of 0.
+}

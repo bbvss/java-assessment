@@ -1,0 +1,27 @@
+Task 1
+- Exec PersonWriteTest
+- Exec PersonReadTest
+why?
+// PersonRecord[firstName=Heinz, lastName=Kabutz]
+// org.records1.PersonClass@71d095c9
+
+Task 2
+However, with GDPR, we might want to ask for as little personal information as possible.
+Let's change both PersonClass and PersonRecord to have an optional parameter for lastName.
+- Exec PersonReadTest
+
+Task 3
+why?
+PersonRecord[firstName=Kabutz, lastName=Heinz] why is working?
+Exception in thread "main" java.io.InvalidClassException:
+    PersonClass; local class incompatible: stream classdesc
+    serialVersionUID = 3606827991270232798, local class
+    serialVersionUID = 370566374786230668
+
+    As we can see, the PersonRecord was read back without an issue, but the PersonClass failed.
+    Can we make it work without re-running PersonWriteTest?
+
+Task 4
+Beautiful! However, we also received a stern letter from the USA that we are using a trademarked name.
+Not allowed!
+We change our constructors to explicitly disallow this.

@@ -1,0 +1,15 @@
+    // SOLUTION 2
+    add to PersonClass:
+
+    public PersonClass(String firstName) {
+        this(firstName, null);
+    }
+
+
+    add to PersonRecord:
+
+    Our PersonRecord is also changed to get a second constructor, besides its canonical one.
+
+        public PersonRecord(String firstName) {
+            this(firstName, null);
+        }
